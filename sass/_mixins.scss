@@ -1,0 +1,27 @@
+@use './colors';
+
+@mixin burgerBtn
+{
+    position: absolute;
+    right: 0;
+    height: 3px;
+    content: '';
+    background-color: colors.$pure-white;
+    transition: width 0.3s;
+    border-radius: 8px;
+}
+
+@mixin heroImg($bgImg)
+{
+    background-image: colors.$blue-gradient, url($bgImg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+@mixin travelCardStyle
+{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

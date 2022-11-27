@@ -1,0 +1,476 @@
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.white-block {
+  position: absolute;
+  height: 40px;
+  width: 60%;
+  background-color: #fff;
+}
+.white-block-left {
+  bottom: 0;
+  left: -50px;
+  transform: skew(45deg);
+}
+.white-block-right {
+  top: 0;
+  right: -50px;
+  transform: skew(45deg);
+}
+
+.btn-animation {
+  position: relative;
+  transition: background-color 0.3s;
+  overflow: hidden;
+  z-index: 0;
+}
+.btn-animation::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+  z-index: -5;
+}
+.btn-animation:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: 2em;
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1755e7;
+  letter-spacing: 2px;
+}
+
+.section-padding {
+  padding: 6em 2em;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3.6rem;
+  }
+  .section-padding {
+    padding: 8em 2em;
+  }
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6 rem;
+}
+
+.burger-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1em;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  z-index: 1000;
+}
+.burger-btn:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+.burger-btn:hover .burger-btn__bars::after, .burger-btn:hover .burger-btn__bars::before {
+  width: 100%;
+}
+.burger-btn__box {
+  position: relative;
+  width: 40px;
+  height: 30px;
+}
+.burger-btn__bars, .burger-btn__bars::after, .burger-btn__bars::before {
+  position: absolute;
+  right: 0;
+  height: 3px;
+  content: "";
+  background-color: #fff;
+  transition: width 0.3s;
+  border-radius: 8px;
+}
+.burger-btn__bars {
+  width: 100%;
+}
+.burger-btn__bars::after {
+  top: 13px;
+  width: 60%;
+}
+.burger-btn__bars::before {
+  top: 27px;
+  width: 30%;
+  transition-delay: 0.1s;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
+  transform: translateX(100%);
+  transition: 0.5s cubic-bezier(0.94, 0.89, 0, 0.26);
+  z-index: 100;
+}
+.nav--active-nav {
+  transform: translateX(0);
+}
+.nav__item {
+  position: relative;
+  display: block;
+  margin: 0.5em 0;
+  padding: 0.5em 2em;
+  font-size: 2.8rem;
+  color: #fff;
+  text-decoration: none;
+}
+.nav__item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0%;
+  content: "";
+  background-color: #fff;
+  transition: height 0.3s;
+  transition-delay: 0.2s;
+}
+.nav__item::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  content: "";
+  background-color: #fff;
+  transition: width 0.3s;
+}
+.nav__item:hover::before {
+  height: 100%;
+}
+.nav__item:hover::after {
+  width: 100%;
+  transition-delay: 0.35s;
+}
+
+@-webkit-keyframes navItemsAnimation {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes navItemsAnimation {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.nav-items-animation {
+  -webkit-animation: navItemsAnimation 1.2s both;
+          animation: navItemsAnimation 1.2s both;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  height: 90vh;
+  text-align: center;
+  color: #fff;
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/transport-g87842d1c2_640.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.header__title {
+  font-size: 4.8em;
+  font-weight: 300;
+}
+.header__text {
+  font-size: 1.4rem;
+}
+.header__btn {
+  margin-top: 2em;
+  padding: 0.8em 1.6em;
+  font-size: 1.4em;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  color: #2e2e2e;
+  text-decoration: none;
+  cursor: pointer;
+}
+.header__btn::before {
+  background-color: #eee;
+}
+
+.flight__box {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 0;
+}
+.flight__img {
+  width: 100%;
+  margin-bottom: 1em;
+}
+.flight__title {
+  margin-bottom: 0.5em;
+}
+.flight__text {
+  font-size: 1.4rem;
+}
+
+.hero-img {
+  position: relative;
+  padding: 10em 2em;
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/aircraft-g64fa38503_640.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.hero-img__title {
+  font-size: 4.8em;
+  margin-bottom: 0.5em;
+}
+.hero-img__text {
+  padding: 1em 0;
+}
+
+.travel__card {
+  position: relative;
+  margin: 1em 0;
+  height: 450px;
+  color: #fff;
+  text-align: center;
+  perspective: 1000px;
+}
+.travel__card:hover .travel__card-img {
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+.travel__card:hover .travel__card-info {
+  transform: rotateY(0);
+  opacity: 1;
+}
+.travel__card-img {
+  padding: 2em;
+  height: 100%;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 1s, opacity 1s;
+}
+.travel__card-img--first {
+  background-image: linear-gradient(45deg, rgba(8, 206, 255, 0.75), rgba(8, 24, 255, 0.75)), url("../img/big-ben-g1fbc48d82_640.jpg");
+}
+.travel__card-img--second {
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/eiffel-tower-gb7eaa08cb_640.jpg");
+}
+.travel__card-img--third {
+  background-image: linear-gradient(45deg, rgba(190, 10, 214, 0.75), rgba(68, 0, 255, 0.75)), url("../img/houses-gb689a5b0f_640.jpg");
+}
+.travel__card-img-title {
+  font-size: 2.8rem;
+}
+.travel__card-img-description {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-size: 1.8rem;
+}
+.travel__card-img-description i {
+  margin-right: 0.3em;
+}
+.travel__card-info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: radial-gradient(circle at top right, rgb(0, 78, 255) 0%, rgb(0, 212, 255) 100%);
+  border-radius: 8px;
+  opacity: 0;
+  transform: rotateY(180deg);
+  transition: transform 1s, opacity 1s;
+}
+.travel__card-info-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0.8em;
+  font-size: 2.8rem;
+}
+.travel__card-info-list {
+  margin: 0 auto;
+  width: 70%;
+  list-style: none;
+}
+.travel__card-info-list-item {
+  padding: 1em;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #eee;
+}
+.travel__card-info-list-item:last-child {
+  border-bottom: none;
+}
+.travel__card-info-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2em;
+  padding: 1em;
+  border-radius: 8px;
+  width: 80%;
+  border: none;
+  background-color: #00ffaa;
+  cursor: pointer;
+}
+.travel__card-info-btn::before {
+  background-color: #0fe29c;
+}
+
+@media (min-width: 576px) {
+  .flight__box {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .flight__box-text {
+    width: 55%;
+  }
+  .flight__box-text--right {
+    text-align: right;
+  }
+  .flight__box-img {
+    width: 40%;
+  }
+  .flight__box-img--right {
+    order: 1;
+  }
+  .flight__img {
+    margin-bottom: 0;
+    max-height: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .white-block {
+    width: 50%;
+  }
+  .header__title {
+    font-size: 6.6rem;
+  }
+  .header__text {
+    font-size: 2.2rem;
+  }
+  .header__btn {
+    font-size: 1.6rem;
+  }
+  .flight__text {
+    font-size: 1.8rem;
+  }
+  .hero-img {
+    padding: 30rem 2em;
+  }
+  .hero-img hr {
+    margin: 0 auto;
+    width: 70%;
+  }
+  .hero-img__text {
+    font-size: 2.2rem;
+  }
+  .travel__cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .travel__card {
+    margin: 1em;
+    width: 45%;
+  }
+}
+@media (min-width: 992px) {
+  .burger-btn {
+    top: 50px;
+    right: 50px;
+  }
+  .nav__item {
+    font-size: 3.8rem;
+  }
+  .header {
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/transport-g36e507488_1920.jpg");
+  }
+  .flight__box {
+    margin: 5em 0;
+  }
+  .flight__box-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 2.5em;
+  }
+  .flight__title {
+    font-size: 2.8rem;
+  }
+  .flight__text {
+    font-size: 2rem;
+  }
+  .hero-img {
+    padding: 40rem 2em;
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/aircraft-g2c81e9567_1920.jpg");
+  }
+  .hero-img__title {
+    font-size: 7.2rem;
+  }
+  .hero-img hr {
+    width: 70%;
+    max-width: 900px;
+  }
+}
+@media (min-width: 1100px) {
+  .travel__card {
+    width: 30%;
+  }
+}/*# sourceMappingURL=main.css.map */

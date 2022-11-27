@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport - Lot</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1387792aac.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+    <!-- Menu burger -->
+    <button class="burger-btn">
+        <div class="burger-btn__box">
+            <div class="burger-btn__bars"></div>
+        </div>
+    </button>
+
+    <!-- przypisanie dla navigacji clasy modyfikatora nav--active-nav -->
+    <nav class="nav">
+        <div class="nav__items">
+            <a href="#flights" class="nav__item">Loty</a>
+            <a href="#offers" class="nav__item">Oferta</a>
+            <a href="#reviews" class="nav__item">Opinie</a>
+            <a href="#contact" class="nav__item">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- Sekcja tytułowa zawierająca zdjęcie tytuł i krótki opis strony -->
+    <header class="header section">
+        <h1 class="header__title">Flight Better</h1>
+        <p class="header__text">Cały świat w zasięgu twojego lotu</p>
+        <a href="#offers" class="header__btn btn-animation">Poznaj naszą ofertę</a>
+        <!-- wcięcia na stronie -->
+        <div class="white-block white-block-left"></div>
+    </header>
+
+    <main class="main">
+        <section class="flight section-padding section white-section">
+            <div class="wrapper">
+                <h2 class="section-title">leć gdzie tylko zapragniesz</h2>
+
+                <div class="flight__box">
+                    <div class="flight__box-img">
+                        <img src="./img/barcelona-g2eb64d896_640.jpg" alt="samolot nad miastem" class="flight__img">
+                    </div>
+                    <div class="flight__box-text">
+                        <h3 class="flight__title">Wybierz cel - bez ograniczeń</h3>
+                        <p class="flight__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, molestias. Voluptatem ratione nostrum suscipit nulla esse hic at ut perspiciatis amet, dolor, atque cum error explicabo consequuntur consequatur, eaque magnam!</p>
+                    </div>
+                </div>
+                <div class="flight__box">
+                    <div class="flight__box-img flight__box-img--right">
+                        <img src="./img/prague-g4c2f3d18e_640.jpg" alt="samolot startujący w nocy na lotnisku" class="flight__img">
+                    </div>
+                    <div class="flight__box-text flight__box-text--right">
+                        <h3 class="flight__title">Wybierz cel - bez ograniczeń</h3>
+                        <p class="flight__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, molestias. Voluptatem ratione nostrum suscipit nulla esse hic at ut perspiciatis amet, dolor, atque cum error explicabo consequuntur consequatur, eaque magnam!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero-img section">
+            <div class="white-block white-block-left"></div>
+            <div class="white-block white-block-right"></div>
+            <p class="hero-img__title">Wysokie loty</p>
+            <hr>
+            <p class="hero-img__text">Jedyny taki sposób podróży</p>
+            <hr>
+        </section>
+
+        <section id="travel" class="travel section-padding section white-section">
+            <div class="wrapper">
+                <h2 class="section-title">Kierunki lotów</h2>
+
+                <div class="travel__cards">
+
+                    <!-- onclick=void(0) - odpowiada za funkcjonalność hover na tapnięciu na urządzeniach mobilnych -->
+                    <div class="travel__card" onclick="void(0)">
+                        <div class="travel__card-img travel__card-img--first">
+                            <h3 class="travel__card-img-title">Londyn</h3>
+                            <p class="travel__card-img-description"><i class="fas fa-angle-double-right"></i>Więcej informacji</p>
+                        </div>
+
+                        <div class="travel__card-info">
+                            <h3 class="travel__card-info-title">Londyn</h3>
+                            <ul class="travel__card-info-list">
+                                <li class="travel__card-info-list-item">City break</li>
+                                <li class="travel__card-info-list-item">Wczasy</li>
+                                <li class="travel__card-info-list-item">Zabytki</li>
+                                <li class="travel__card-info-list-item">Koncerty</li>
+                                <li class="travel__card-info-list-item">Business trip</li>
+                            </ul>
+                            <button class="travel__card-info-btn btn-animation">Wybierz</button>
+                        </div>
+                    </div>
+
+                    <!-- onclick=void(0) - odpowiada za funkcjonalność hover na tapnięciu na urządzeniach mobilnych -->
+                    <div class="travel__card" onclick="void(0)">
+                        <div class="travel__card-img travel__card-img--second">
+                            <h3 class="travel__card-img-title">Paryż</h3>
+                            <p class="travel__card-img-description"><i class="fas fa-angle-double-right"></i>Więcej informacji</p>
+                        </div>
+
+                        <div class="travel__card-info">
+                            <h3 class="travel__card-info-title">Paryż</h3>
+                            <ul class="travel__card-info-list">
+                                <li class="travel__card-info-list-item">City break</li>
+                                <li class="travel__card-info-list-item">Wczasy</li>
+                                <li class="travel__card-info-list-item">Zabytki</li>
+                                <li class="travel__card-info-list-item">Koncerty</li>
+                                <li class="travel__card-info-list-item">Business trip</li>
+                            </ul>
+                            <button class="travel__card-info-btn btn-animation">Wybierz</button>
+                        </div>
+                    </div>
+
+                    <!-- onclick=void(0) - odpowiada za funkcjonalność hover na tapnięciu na urządzeniach mobilnych -->
+                    <div class="travel__card" onclick="void(0)">
+                        <div class="travel__card-img travel__card-img--third">
+                            <h3 class="travel__card-img-title">Amsterdam</h3>
+                            <p class="travel__card-img-description"><i class="fas fa-angle-double-right"></i>Więcej informacji</p>
+                        </div>
+
+                        <div class="travel__card-info">
+                            <h3 class="travel__card-info-title">Amsterdam</h3>
+                            <ul class="travel__card-info-list">
+                                <li class="travel__card-info-list-item">City break</li>
+                                <li class="travel__card-info-list-item">Wczasy</li>
+                                <li class="travel__card-info-list-item">Zabytki</li>
+                                <li class="travel__card-info-list-item">Koncerty</li>
+                                <li class="travel__card-info-list-item">Business trip</li>
+                            </ul>
+                            <button class="travel__card-info-btn btn-animation">Wybierz</button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </section>
+
+
+    </main>
+    
+    <script src="./js/main.js"></script>
+</body>
+</html>
