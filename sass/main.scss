@@ -26,6 +26,7 @@ body
     font-size: 1.6 rem;
 }
 
+
 // SEKCJA NAV
 
 // stylizowanie przycisku menu burger
@@ -98,11 +99,12 @@ body
     height: 100vh;
     width: 100%;
     background-image: colors.$blue-gradient-solid;
+    // translateX(100%) - przesuwa nawigacje 100% na osi X w prawo
     transform: translateX(100%);
     transition: 0.5s cubic-bezier(.94,.89,0,.26);
     z-index: 100;
 
-    // modifier dla nawigacji (metodologia BEM - .block __element --modifier)
+    // modifier dla nawigacji (metodologia BEM - .block __element --modifier) odpowiedzialny za przelaczanie nawigacji, dodawanie tej klasy odbywa sie za pomoca skryptu js
     &--active-nav
     {
         transform: translateX(0);
@@ -177,9 +179,13 @@ body
 }
 
 
+// klasa odpowiedzialna za zmiane kolorow nawigacji dodawana z wykorzystaniem js
+.black-bars-color, .black-bars-color::after, .black-bars-color::before
+{
+    background-color: colors.$dark;
+}
 
 // SEKCJA HEADER
-
 .header
 {
     position: relative;
@@ -191,6 +197,7 @@ body
     height: 90vh;
     text-align: center;
     color: colors.$pure-white;
+    // zasada działania zmiennej to mozliwosc przekierowania obrazu w nawiasie
     @include mixins.heroImg('../img/transport-g87842d1c2_640.jpg');
 
     &__title
@@ -225,7 +232,6 @@ body
 }
 
 // SEKCJA FLIGHT
-
 .flight
 {
     &__box
@@ -254,7 +260,6 @@ body
 
 
 // SEKCJA HERO-IMG
-
 .hero-img
 {
     position: relative;
@@ -278,7 +283,6 @@ body
 
 
 // SEKCJA TRAVEL
-
 .travel
 {
     &__card
@@ -412,6 +416,279 @@ body
 
 }
 
+// SEKCJA OFERTY
+.offers
+{
+    position: relative;
+    background: colors.$blue-gradient-solid;
+    overflow: hidden;
+
+    .section-title
+    {
+        color: colors.$pure-white;
+    }
+
+    &__option
+    {
+        margin: 1em 0;
+        box-shadow: 5px 5px 10px #2e2e2e2e;
+        background-color: colors.$pure-white;
+        // grafiki beda sie zmienialy wiec zeby nie wyciekaly poza ekran zastosowac nalezy overflow hidden
+        overflow: hidden;
+        border-radius: 8px;
+
+        &-img
+        {
+            width: 100%;
+            transition: transform 0.3s;
+
+            &:hover
+            {
+                transform: scale(1.1);
+            }
+        } 
+        
+        &-info
+        {
+            padding: 4em;
+            background-color: colors.$pure-white;
+            z-index: 10;
+        }
+
+        &-heading
+        {
+            margin-bottom: 0.5em;
+            font-size: 2.4rem;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        &-text
+        {
+            margin-bottom: 0.5em;
+            font-size: 1.3rem;
+            color: colors.$dark;
+        }
+
+        &-btn
+        {
+            margin-top: 1em;
+            padding: 0.8em;
+            width: 100%;
+            color: colors.$pure-white;
+            background-color: colors.$main-color;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+
+            &::before
+            {
+                background-color: colors.$secondary-color;
+            }
+        }
+
+    }
+   
+}
+
+
+// SEKCJA OPINIE
+
+@media(max-width: 767px)
+{
+    .reviews.section-padding
+    {
+        padding: 6em 0;
+    }
+}
+
+.reviews
+{
+    &__box
+    {
+        position: relative;
+        margin: 5em 2em;
+        padding: 2em;
+        border-radius: 8px;
+        box-shadow: 3px 3px 10px #2e2e2e2e;
+        transition: transform 0.3s
+    }
+
+    &__box:hover
+    {
+        transform: translate(0, -10%);    
+    }
+
+    &__box-img
+    {
+        position: absolute;
+        top: 8%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+
+        img
+        {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+    
+    &__box-quote
+    {
+        margin-bottom: 1em;
+        font-size: 2rem;
+        color: colors.$main-color;
+    }
+
+    &__box-text
+    {
+        margin-bottom: 1em;
+        font-size: 1.4rem;
+        color: colors.$dark;
+    }
+
+}
+
+// SEKCJA KONTAKT
+.contact
+{
+    position: relative;
+    overflow: hidden;
+    background-color: colors.$light-white;
+
+    .white-block-left
+    {
+        background-color: colors.$dark;
+    }
+
+    &__form, &__form-top
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form-label
+    {
+        margin-bottom: 0.5em;
+        text-transform: uppercase;
+    }
+
+    &__form-input
+    {
+        @include mixins.contactForm;
+    }
+
+    &__form-textarea
+    {
+        @include mixins.contactForm;
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 150px;  
+    }
+
+    &__form-btn
+    {
+        align-self: flex-end;
+        padding: 1em;
+        width: 100%;
+        max-width: 300px;
+        color: colors.$pure-white;
+        border: none;
+        border-radius: 8px;
+        background-color: colors.$main-color;
+        cursor: pointer;
+
+        &::before
+        {
+            background-color: colors.$secondary-color;
+        }
+    }
+
+  
+}
+
+// FOOTER
+
+.footer
+{
+    color: colors.$pure-white;
+    background-color: colors.$dark;
+
+    .wrapper
+    {
+        padding: 6em 2em 2em;
+    }
+
+    &__box
+    {
+        font-size: 1.4rem;
+    }
+
+    &__box-desktop
+    {
+        display: none;
+    }
+
+    &__box-title
+    {
+        margin-bottom: 1em;
+        font-size: 2rem;
+        text-transform: uppercase;
+
+        .fas
+        {
+            margin-right: 1em;
+        }
+    }
+
+    &__box-social
+    {
+        margin: 2em 0 1em;
+
+    }
+
+    &__box-link
+    {
+        padding: 0 0.3em;
+        color: colors.$pure-white;
+        font-size: 2.6rem;
+        text-decoration: none;
+        transition: color 0.3s, background 0.3s;
+
+        &-twitter:hover
+        {
+            color: #1DA1F2;
+        }
+
+        &-facebook:hover
+        {
+            color: #4267B2;
+        }
+
+        &-insta:hover
+        {
+            color: transparent;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        &:first-child
+        {
+            padding-left: 0;
+        }
+    }
+
+    &__bottom-text
+    {
+        padding: 2em;
+        text-align: center;
+    }
+}
+
+
 // SEKCJA RWD
 
 @media (min-width: 576px)
@@ -427,10 +704,10 @@ body
             {
                 width: 55%;
 
-                &--right
-                {
-                    text-align: right;
-                }
+                // &--right
+                // {
+                //     text-align: right;
+                // }
             }
 
             &-img
@@ -450,6 +727,31 @@ body
             max-height: 300px;
         }
 
+    }
+
+    .offers
+    {
+        &__option
+        {
+
+            &-info
+            {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            &-heading
+            {
+                margin-bottom: 0.5em;
+                font-size: 3.6rem;
+            }
+
+            &-btn
+            {
+                padding: 1em;
+            }
+        }
     }
 
 }
@@ -520,6 +822,97 @@ body
 
         }
     }
+
+    .footer
+    {
+        &__boxes
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__box-desktop
+        {
+            display: block;
+            text-align: center;
+        }
+
+        &__box
+        {
+            margin: 0 2em;
+            width: 25%;
+
+            &:first-child
+            {
+                width: 50%;
+            }
+        }
+
+        // &__box-title
+        // {
+        //     font-size: 2.4rem;
+        // }
+
+        &__box-list
+        {
+            list-style: none;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        &__box-list-item
+        {
+            margin-bottom: 1em;
+
+            a
+            {
+                color: colors.$pure-white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 887px)
+{
+    .offers
+    {
+        &__option
+        {
+            display: flex;
+            margin: 2em 0;
+            width: 100%;
+
+            &-img
+            {
+                width: 50%;
+                height: auto;
+
+                &--right
+                {
+                    order: 1;
+                }
+            }
+
+            &-info
+            {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            &-heading
+            {
+                margin-bottom: 0.5em;
+                font-size: 3.6rem;
+            }
+
+            &-btn
+            {
+                padding: 1em;
+            }
+        }
+    }
 }
 
 @media (min-width: 992px)
@@ -583,6 +976,23 @@ body
         {
             width: 70%;
             max-width: 900px;
+        }
+    }
+
+    .offers
+    {
+        &__option
+        {
+            // &-img
+            // {
+            //     object-fit: cover;
+            //     height: 300px;
+            // }
+
+            &-text
+            {
+                font-size: 1.5rem;
+            }
         }
     }
 

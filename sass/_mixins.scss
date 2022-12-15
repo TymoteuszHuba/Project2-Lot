@@ -1,5 +1,6 @@
 @use './colors';
 
+// odnosimy sie tym mixinem do after, before dlatego jest content
 @mixin burgerBtn
 {
     position: absolute;
@@ -11,6 +12,7 @@
     border-radius: 8px;
 }
 
+// w nawiasie heroImg znajduje sie zmienna $bgImg
 @mixin heroImg($bgImg)
 {
     background-image: colors.$blue-gradient, url($bgImg);
@@ -24,4 +26,13 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+@mixin contactForm
+{
+    margin-bottom: 2em;
+    padding: 0.6em 1.2em;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.6rem;
 }

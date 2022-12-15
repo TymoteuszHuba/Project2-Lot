@@ -7,11 +7,17 @@
     <title>Airport - Lot</title>
 
 
+    <!-- podlaczanie czcionek -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
+    <!-- linkowanie skryptu zawierajacego ikony fontawesome -->
     <script src="https://kit.fontawesome.com/1387792aac.js" crossorigin="anonymous"></script>
 
+    <!-- linkowanie biblioteki slick.js odpowiedzialnej za karuzele, przewijanie -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <!-- linkowanie arkusza stylów -->
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
@@ -34,6 +40,7 @@
     </nav>
 
     <!-- Sekcja tytułowa zawierająca zdjęcie tytuł i krótki opis strony -->
+    <!-- clasa section jest potrzebna do javascriptu -->
     <header class="header section">
         <h1 class="header__title">Flight Better</h1>
         <p class="header__text">Cały świat w zasięgu twojego lotu</p>
@@ -42,8 +49,10 @@
         <div class="white-block white-block-left"></div>
     </header>
 
+<!-- SEKCJA MAIN -->
     <main class="main">
         <section class="flight section-padding section white-section">
+            <!-- wrapper wyśrodkowuje zawartosc na maksymalnej szer 1200px -->
             <div class="wrapper">
                 <h2 class="section-title">leć gdzie tylko zapragniesz</h2>
 
@@ -68,6 +77,7 @@
             </div>
         </section>
 
+<!-- SEKCJA HERO-IMG -->
         <section class="hero-img section">
             <div class="white-block white-block-left"></div>
             <div class="white-block white-block-right"></div>
@@ -77,7 +87,8 @@
             <hr>
         </section>
 
-        <section id="travel" class="travel section-padding section white-section">
+<!-- SEKCJA TRAVEL -->
+        <section id="flights" class="travel section-padding section white-section">
             <div class="wrapper">
                 <h2 class="section-title">Kierunki lotów</h2>
 
@@ -150,9 +161,186 @@
             </div>
         </section>
 
+<!-- SEKCJA OFFERS -->
+        <section class="offers section-padding section" id="offers">
+
+            <div class="white-block white-block-right"></div>
+            <div class="white-block white-block-left"></div>
+
+            <h2 class="section-title">Oferty</h2>
+            <div class="wrapper">
+
+                <div class="offers__box">
+                    
+                    <div class="offers__option">
+                        <img src="/img/airport-g620c5336f_640.jpg" alt="kobieta patrząca na listę lotów" class="offers__option-img">
+                        <div class="offers__option-info">
+                            <h3 class="offers__option-heading">Ogromny wybór lotów</h3>
+                            <p class="offers__option-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam dolore quasi incidunt quod esse, voluptate illum ducimus? Libero, accusantium optio.</p>
+                            <p class="offers__option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <button class="offers__option-btn btn-animation">Sprawdź</button>
+                        </div>
+                    </div>
+                    <div class="offers__option">
+                        <img src="/img/airport-ge1dd529f4_640.jpg" alt="terminal lotniczy, wnętrze" class="offers__option-img offers__option-img--right">
+                        <div class="offers__option-info">
+                            <h3 class="offers__option-heading">Przestrzenne terminale</h3>
+                            <p class="offers__option-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam dolore quasi incidunt quod esse, voluptate illum ducimus? Libero, accusantium optio.</p>
+                            <p class="offers__option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <button class="offers__option-btn btn-animation">Sprawdź</button>
+                        </div>
+                    </div>
+                    <div class="offers__option">
+                        <img src="/img/travel-g4a1363cdf_640.jpg" alt="bilet lotniczy w ręce" class="offers__option-img">
+                        <div class="offers__option-info">
+                            <h3 class="offers__option-heading">Bezproblemowe odprawy</h3>
+                            <p class="offers__option-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam dolore quasi incidunt quod esse, voluptate illum ducimus? Libero, accusantium optio.</p>
+                            <p class="offers__option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <button class="offers__option-btn btn-animation">Sprawdź</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+<!-- SEKCJA KOMENTARZE -->
+        <section class="reviews section-padding white-section section" id="reviews">
+            <h2 class="section-title">Opinie</h2>
+            <div class="wrapper">
+
+                <div class="reviews__boxes">
+
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="/img/attractive-g2624034b3_640.jpg" alt="Anna Nowak">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                            <p class="reviews__box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, aut facilis cupiditate voluptatum temporibus ipsam omnis voluptatibus sed explicabo reiciendis.</p>
+                            <strong>Anna Nowak</strong>
+                        </div>
+                    </div>
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="/img/happy-g768a1a912_640.jpg" alt="Jan Kowalski">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                            <p class="reviews__box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, aut facilis cupiditate voluptatum temporibus ipsam omnis voluptatibus sed explicabo reiciendis.</p>
+                            <strong>Jan Kowalski</strong>
+                        </div>
+                    </div>
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="/img/woman-g024a40a8b_640.jpg" alt="Anna Jantar">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                            <p class="reviews__box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, aut facilis cupiditate voluptatum temporibus ipsam omnis voluptatibus sed explicabo reiciendis.</p>
+                            <strong>Anna Jantar</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+<!-- SEKCJA KONTANT -->
+        <section class="contact section-padding white-section section" id="contact">
+
+            <div class="white-block white-block-left"></div>
+            <div class="white-block white-block-right"></div>
+
+            <h2 class="section-title">Kontakt</h2>
+            <div class="wrapper">
+
+                <form class="contact__form">
+                    <div class="contact__form-top">
+                        <label for="name" class="contact__form-label">Imię i nazwisko:</label>
+                        <input type="text" class="contact__form-input" id="name">
+
+                        <label for="email" class="contact__form-label">Adres email:</label>
+                        <input type="text" class="contact__form-input" id="email">
+                    </div>
+
+                    <label for="msg" class="contact__form-label">Wiadomość:</label>
+                    <textarea id="msg" class="contact__form-textarea"></textarea>
+
+                    <button type="submit" class="contact__form-btn btn-animation">Wyślij</button>
+
+                </form>
+
+            </div>
+
+        </section>
 
     </main>
+
+
+<!-- STOPKA -->
+    <footer class="footer">
+        <div class="wrapper">
+
+            <div class="footer__boxes">
+
+                <div class="footer__box">
+                    <h3 class="footer__box-title"><i class="fas fa-plane-departure"></i>Flight Co.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam blanditiis ullam itaque rerum explicabo recusandae obcaecati maxime quis vero enim!</p>
+                    <div class="footer__box-social">
+                        <a href="#" class="footer__box-link footer__box-link-twitter"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#" class="footer__box-link footer__box-link-facebook"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="footer__box-link footer__box-link-insta"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__box-desktop">
+                    <h3 class="footer__box-title">Loty</h3>
+                    <ul class="footer__box-list">
+                        <li class="footer__box-list-item"><a href="#">Amsterdam</a></li>
+                        <li class="footer__box-list-item"><a href="#">Barcelona</a></li>
+                        <li class="footer__box-list-item"><a href="#">Paryż</a></li>
+                        <li class="footer__box-list-item"><a href="#">Berlin</a></li>
+                        <li class="footer__box-list-item"><a href="#">Londyn</a></li>
+                    </ul>
+                </div>
+                <div class="footer__box-desktop">
+                    <h3 class="footer__box-title">O firmie</h3>
+                    <ul class="footer__box-list">
+                        <li class="footer__box-list-item"><a href="#">O nas</a></li>
+                        <li class="footer__box-list-item"><a href="#">Zarząd</a></li>
+                        <li class="footer__box-list-item"><a href="#">Kariera</a></li>
+                        <li class="footer__box-list-item"><a href="#">Lotniska</a></li>
+                        <li class="footer__box-list-item"><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr>
+        <p class="footer__bottom-text"> &copy; <span class="footer__year"></span> Flight Better</p>
+
+    </footer>
     
+    <!-- skrypty odpowiedzialne za obsługę slick js (biblioteka jquery oraz slick js) -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- skrypt dla slick js  -->
+    <script src="/js/slick.js"></script>
+    <!-- linkowanie skryptow js -->
     <script src="./js/main.js"></script>
 </body>
 </html>
